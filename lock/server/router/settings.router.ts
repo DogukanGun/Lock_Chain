@@ -1,5 +1,5 @@
 import {Router} from 'express';
-import { generateQRAndSavePK } from "../controller/qrController.js";
+import { generateQRAndSavePK } from "../controller/qr.controller.js";
 
 const router = Router({ mergeParams: true });
 

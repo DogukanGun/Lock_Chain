@@ -3,3 +3,4 @@ node_modules/
 wallet.json
 user_wallet.json
 .env
+config.json
