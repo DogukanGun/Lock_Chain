@@ -10,4 +10,10 @@ const passwordSchema = new mongoose.Schema({
     schema:String
 });
 
+export interface IPassword extends Document {
+    address: string;
+    name: string;
+    owner: string;
+}
+
 export const Password = mongoose.model('Password', passwordSchema);

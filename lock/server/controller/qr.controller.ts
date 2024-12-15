@@ -6,9 +6,11 @@ import handleAsync from '../utils/async.js';
 import { Owner } from '../data/Owner.data.js';
 import { isAddress } from "web3-validator";
 
-
-// Function to generate QR code and save public key to a file
-export const generateQRAndSavePK = handleAsync(async (req, res, _) => {
+/*
+ *** Function to generate QR code and save public key to a file.
+ *** The QR code contains the public key of the lock system
+*/
+export const generateQRAndSavePK = handleAsync(async (req, res) => {
     try {
 
         const { firstUser } = req.body
