@@ -1,10 +1,10 @@
-import { Owner } from "server/data/Owner.data";
-import handleAsync from "server/utils/async";
+import { Owner } from "../data/Owner.data.js";
+import handleAsync from "../utils/async.js";
 import fs from 'fs';
 import path from 'path';
 import { GrantedAccess } from "@iexec/dataprotector";
-import { verifyOwner } from "server/utils/owner.verification";
-import { getPasswordAndProtectedData } from "server/utils/get.password";
+import { verifyOwner } from "../utils/owner.verification.js";
+import { getPasswordAndProtectedData } from "../utils/get.password.js";
 
 /*
  *** This endpoint is used to create a key for the first user.

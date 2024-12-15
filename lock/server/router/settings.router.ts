@@ -1,8 +1,8 @@
 import {Router} from 'express';
 import { generateQRAndSavePK } from "../controller/qr.controller.js";
-import { createUser } from 'server/controller/create.subuser.controller.js';
-import { deavtivateKey } from 'server/controller/deactivate.key.controller.js';
-import { unlockDoor } from 'server/controller/unlock.controller.js';
+import { createUser } from '../controller/create.subuser.controller.js';
+import { deavtivateKey } from '../controller/deactivate.key.controller.js';
+import { unlockDoor } from '../controller/unlock.controller.js';
 
 const router = Router({ mergeParams: true });
 

@@ -1,9 +1,9 @@
-import handleAsync from "server/utils/async";
+import handleAsync from "../utils/async.js";
 import fs from 'fs';
 import path from 'path';
-import { Owner } from "server/data/Owner.data";
-import { verifyOwner } from "server/utils/owner.verification";
-import { getPasswordAndProtectedData } from "server/utils/get.password";
+import { Owner } from "../data/Owner.data.js";
+import { verifyOwner } from "../utils/owner.verification.js";
+import { getPasswordAndProtectedData } from "../utils/get.password.js";
 
 /*
  *** This endpoint is used to deactive of a subkey.

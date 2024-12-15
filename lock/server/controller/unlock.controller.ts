@@ -1,8 +1,8 @@
-import handleAsync from "server/utils/async";
-import { getPasswordAndProtectedData } from "server/utils/get.password";
-import { verifyMessage } from "server/utils/solve.puzzle";
+import handleAsync from "../utils/async.js";
+import { getPasswordAndProtectedData } from "../utils/get.password.js";
+import { verifyMessage } from "../utils/solve.puzzle.js";
 import { GrantedAccessResponse } from "@iexec/dataprotector";
-import { sendMessage } from "server/utils/notification.email";
+import { sendMessage } from "../utils/notification.email.js";
 
 /*
  *** This endpoint is used to open the lock.

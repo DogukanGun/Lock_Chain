@@ -1,4 +1,4 @@
-import { IPassword, Password } from "server/data/Password.data";
+import { IPassword, Password } from "../data/Password.data.js";
 import { ProtectedData } from "@iexec/dataprotector";
 
 interface PasswordAndProtectedDataResult {

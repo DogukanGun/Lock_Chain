@@ -1,7 +1,7 @@
 import Web3 from "web3";
-import { verifyMessage } from "server/utils/solve.puzzle";
-import { IOwner, Owner } from "server/data/Owner.data";
-import { IPassword, Password } from "server/data/Password.data";
+import { verifyMessage } from "../utils/solve.puzzle.js";
+import { IOwner, Owner } from "../data/Owner.data.js";
+import { IPassword, Password } from "../data/Password.data.js";
 
 interface VerificationResult {
     isVerified: boolean;
