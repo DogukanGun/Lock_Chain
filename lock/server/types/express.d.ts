@@ -4,6 +4,7 @@ declare global {
       web3Provider?: any;
       dataProtector?: any;
       dataProtect?: string;
+      wallet: any
     }
   }
 }

@@ -39,6 +39,7 @@ const dataProtectionMiddleware = handleAsync(async (req, res, next) => {
         (req as any).web3Provider = web3Provider;
         (req as any).dataProtector = dataProtector;
         (req as any).dataProtect = dataProtect;
+        (req as any).wallet = wallet;
     
         // Proceed to the next middleware or route handler
         next();

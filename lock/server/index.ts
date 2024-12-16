@@ -9,20 +9,13 @@ import cors from "cors"
 
 dotenv.config()
 const app = express();
-const isCorsEnabled = process.env.ENV !== 'DEV';
-if (isCorsEnabled) {
-    console.log("CORS is enabled");
-    app.use(cors({
-        origin: 'http://localhost:3000', // Frontend origin
-        methods: ['GET', 'POST'], // Allowed methods
-    }));
-} else {
-    console.log("CORS is disabled");
-    app.use((_, res, next) => {
-        res.header('Access-Control-Allow-Origin', '*');
-        next();
-    });
-}
+app.use(cors(
+    {
+        origin: 'http://localhost:3000',
+        methods: ['GET', 'POST', 'OPTIONS'],
+        allowedHeaders: ['Content-Type']
+    }
+));
 app.use(express.json())
 const port = 3001;
 
