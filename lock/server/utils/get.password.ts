@@ -22,6 +22,7 @@ export const getPasswordAndProtectedData = async (
             owner: password.owner,
             protectedDataAddress: password.address
         });
+        console.log("Protected data: ", protectedDataRes);
 
         return { protectedData: protectedDataRes };
     } catch (err) {

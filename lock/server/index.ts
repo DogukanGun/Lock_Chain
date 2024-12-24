@@ -31,4 +31,5 @@ app.listen(port, async () => {
                 await createConfig();
             }
         })
+        .catch(err => console.log(err))
 })

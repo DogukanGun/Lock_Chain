@@ -38,6 +38,9 @@ importers:
       uuid:
         specifier: ^11.0.3
         version: 11.0.3
+      web-streams-polyfill:
+        specifier: ^4.0.0
+        version: 4.0.0
       web3:
         specifier: ^4.16.0
         version: 4.16.0(encoding@0.1.13)(typescript@5.7.2)(zod@3.23.8)
@@ -2132,6 +2135,10 @@ packages:
 
   weald@1.0.4:
     resolution: {integrity: sha512-+kYTuHonJBwmFhP1Z4YQK/dGi3jAnJGCYhyODFpHK73rbxnp9lnZQj7a2m+WVgn8fXr5bJaxUpF6l8qZpPeNWQ==}
+
+  web-streams-polyfill@4.0.0:
+    resolution: {integrity: sha512-0zJXHRAYEjM2tUfZ2DiSOHAa2aw1tisnnhU3ufD57R8iefL+DcdJyRBRyJpG+NUimDgbTI/lH+gAE1PAvV3Cgw==}
+    engines: {node: '>= 8'}
 
   web-worker@1.2.0:
     resolution: {integrity: sha512-PgF341avzqyx60neE9DD+XS26MMNMoUQRz9NOZwW32nPQrF6p77f1htcnjBSEV8BGMKZ16choqUG4hyI0Hx7mA==}
@@ -4543,6 +4550,8 @@ snapshots:
     dependencies:
       ms: 3.0.0-canary.1
       supports-color: 9.4.0
+
+  web-streams-polyfill@4.0.0: {}
 
   web-worker@1.2.0: {}
 

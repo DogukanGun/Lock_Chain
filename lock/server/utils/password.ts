@@ -8,6 +8,12 @@ export const generatePassword = async (dataProtector: IExecDataProtector): Promi
         },
     });
     console.log("Password is generated")
+    await dataProtector.sharing.setProtectedDataToRenting({
+                protectedData: res.address,
+                price: 1,
+                duration: 60 * 60 * 24 * 30,
+            });
+    console.log("Password is set to renting")
     return res
 }
 
