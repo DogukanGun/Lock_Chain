@@ -3,6 +3,7 @@ import { MetaMaskButton, MetaMaskUIProvider, useAccount, useSDK } from "@metamas
 import { useEffect, useState } from "react";
 import { useSwitchChain } from "wagmi";
 import { CitreaID } from "./config";
+import { mintNft } from "./mint";
 
 type LockResponse = {
   message: string,
@@ -39,9 +40,9 @@ const Home = () => {
       .catch((error) => console.error(error));
   }
 
-  const buttonClick = () => {
+  const buttonClick = async() => {
     switchChain.switchChain({ chainId: CitreaID })
-
+    await mintNft("","")
   }
 
   useEffect(() => {
