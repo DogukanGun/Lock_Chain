@@ -7,6 +7,7 @@ import com.dag.mylock.base.navigation.DefaultNavigator
 import com.dag.mylock.base.navigation.Destination
 import com.dag.mylock.base.network.HttpLogger
 import com.dag.mylock.domain.DataPreferencesStore
+import com.dag.mylock.network.LockChainApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,6 +15,8 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
@@ -58,4 +61,13 @@ class ObjectModules {
             .build()
     }
 
+    @Singleton
+    @Provides
+    fun provideRetrofit(): LockChainApi {
+        return  Retrofit.Builder()
+            .baseUrl("https://localhost:8000/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(LockChainApi::class.java)
+    }
 }

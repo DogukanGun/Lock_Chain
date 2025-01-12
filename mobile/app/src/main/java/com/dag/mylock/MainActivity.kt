@@ -30,8 +30,12 @@ import com.dag.mylock.data.AlertDialogModel
 import com.dag.mylock.domain.DataPreferencesStore
 import com.dag.mylock.theme.MyLockTheme
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
+import org.web3j.crypto.Keys
+import org.web3j.utils.Numeric
+import java.security.SecureRandom
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -48,6 +52,25 @@ class MainActivity : ComponentActivity() {
 
     @Inject
     lateinit var preferencesStore: DataPreferencesStore
+
+    private fun generatePrivateKeyIfNotExist(){
+        lifecycleScope.launch {
+            preferencesStore.read(DataPreferencesStore.PRIVATE_KEY).collectLatest {
+                if (it == null) {
+                    // Generate a new private key
+                    val secureRandom = SecureRandom()
+                    val keyPair = Keys.createEcKeyPair(secureRandom)
+
+                    // Extract private key as a hexadecimal string
+                    val privateKey = keyPair.privateKey
+                    val privateKeyHex = Numeric.toHexStringNoPrefix(privateKey)
+                    val address = Keys.getAddress(keyPair)
+                    preferencesStore.write(DataPreferencesStore.PUBLIC_KEY,address)
+                    preferencesStore.write(DataPreferencesStore.PRIVATE_KEY,privateKeyHex)
+                }
+            }
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.dag.mylock.feature.home.presentation.components.ClickType
@@ -21,7 +22,8 @@ import com.dag.mylock.feature.home.presentation.components.features
 
 @Composable
 fun HomeView(
-    navController: NavController
+    navController: NavController,
+    homeVM: HomeVM = hiltViewModel()
 ){
     val context = LocalContext.current
     LazyVerticalGrid(
@@ -37,11 +39,7 @@ fun HomeView(
             HomeCard(feature.text,feature.animationRes){
                 when(feature.clickType) {
                     ClickType.Custom -> {
-                        feature.onClick?.let {
-                            it(context) {value->
-
-                            }
-                        }
+                        
                     }
                     ClickType.Navigation -> {
                         feature.destination?.let {destination ->

@@ -77,4 +77,7 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.androidx.datastore.preferences)
 
+    implementation(libs.lottie.compose)
+    implementation(libs.core)
+
 }
